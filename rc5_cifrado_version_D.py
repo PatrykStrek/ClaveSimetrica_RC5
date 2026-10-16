@@ -83,7 +83,7 @@ Convertir la clave en palabras para crear L
 """
 def preparar_L(clave):
     if len(clave) != B:
-        raise ValueError("La clave debe tener 16 bytes")
+        raise ValueError('La clave debe tener ', B, ' bytes')
 
     c = (len(clave) + U - 1) // U
     L = [0] * c
@@ -213,18 +213,70 @@ def cifrar_mensaje(mensaje, clave):
     return cifrado
 
 
+"""
+Transforma la clave según el formato escogido
+"""
+def convertir_clave(clave, formato):
+    if formato == "texto":
+        clave = clave.encode("utf-8")
 
-mensaje = "hola mundo"
+    elif formato == "hex":
+        try:
+            clave = bytes.fromhex(clave)
+        except ValueError:
+            raise ValueError("La clave hexadecimal no es válida")
 
-# Clave de 16 bytes (128 bits)
-clave = bytes.fromhex(
-    "00112233445566778899AABBCCDDEEFF"
+    else:
+        raise ValueError("Formato no válido. Usa 'texto' o 'hex'")
+
+    if len(clave) != B:
+        raise ValueError(f"La clave debe tener exactamente {B} bytes")
+
+    return clave
+
+
+
+
+mensaje = "help Wednesday finish?” She dashed out of the room with her feet slapping against the\
+floorboards and Wednesday again, resisted the urge to roll her eyes. Part of her understood\
+the urge to reach out to someone who wasn’t present – she did that constantly. But she could\
+also see how much Josie just wanted to celebrate her partner, and Emiliana wasn’t quite\
+letting her.\
+Still, Josie didn’t look offended as she took off, merely pulled herself up to the stools at the\
+counter. “I’m assuming you don’t need, or want help?” Shaking her head, Wednesday stared\
+at the contents of the pot, hoping her eyes wouldn’t water in betrayal as Josie tried to pull\
+feelings out of her. “Was class any better today?”\
+Giving a dismissive shrug, Wednesday replied with a snide, “I wasn’t called to the dean’s\
+office, if that’s what you’re wondering.”\
+“That isn’t what I was wondering, but that’s…good. A low bar, but – glad you crossed it. It\
+seems like you decidedly do not want to talk about school? Is there anything you do want to\
+talk about?”\
+“There is nothing I could bring up that wouldn’t end with a lecture or therapy session. I’d lie\
+and tell you I’m fine, but you won’t believe it. I’m just going to be quiet.”\
+There was a distinctive beat of Josie’s short nails on the marble of the counter and a few\
+moments passed as she clearly selected her next words carefully before offering, “Do you\
+want to hear about snakes?”\
+“Not entirely.”\
+“Do you want to talk about Enid?”\
+“Josie.” Wednesday ended her attempts with a gaze flickered up through long lashes that she\
+hoped read frustration.\
+“Fine. Do you want to take a bowl to go and be miserable in your own condo?”\
+“No.”\
+“Wednesday…”\
+She turned around and crossed her arms, letting out a long huff, avoiding looking at her\
+former mentor-turned-big-sister. “Alright. I’m going to hug you now. Incoming.”\
+Melting into Josie’s hold, Wednesday let it go on until Emiliana skipped back into the room,\
+her footfalls always sounding so heavy for someone so light. She squeezed Josie and\
+Wednesday to her, pecking the tops of both of their heads. “Bien-aimée, I apologize for being\
+so short with you when you came home. I am still learning to filter the distractions while\
+reading."
+
+clave = convertir_clave(
+    "waifus1234567890",
+    "texto"
 )
 
 cifrado = cifrar_mensaje(mensaje, clave)
 
 print("Mensaje original:", mensaje)
 print("Mensaje cifrado (hex):", cifrado.hex())
-print("Longitud del cifrado:", len(cifrado), "bytes")
-
-
