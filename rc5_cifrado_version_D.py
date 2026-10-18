@@ -83,7 +83,7 @@ Convertir la clave en palabras para crear L
 """
 def preparar_L(clave):
     if len(clave) != B:
-        raise ValueError('La clave debe tener ', B, ' bytes')
+        raise ValueError('La clave debe tener ', B,' bytes')
 
     c = (len(clave) + U - 1) // U
     L = [0] * c
@@ -236,7 +236,6 @@ def convertir_clave(clave, formato):
 
 
 
-
 mensaje = "help Wednesday finish?” She dashed out of the room with her feet slapping against the\
 floorboards and Wednesday again, resisted the urge to roll her eyes. Part of her understood\
 the urge to reach out to someone who wasn’t present – she did that constantly. But she could\
@@ -278,5 +277,5 @@ clave = convertir_clave(
 
 cifrado = cifrar_mensaje(mensaje, clave)
 
-print("Mensaje original:", mensaje)
-print("Mensaje cifrado (hex):", cifrado.hex())
+print("- Mensaje original:", mensaje)
+print("\n- Mensaje cifrado (hex):", cifrado.hex())
