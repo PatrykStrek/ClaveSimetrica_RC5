@@ -45,7 +45,7 @@ def rotar_izquierda(bits, n):
 
 def rotar_derecha(bits, n):
     """
-    Rota un bitarray a la derecha n posiciones
+        
     input: bits (bitarray), n (entero)
     output: bitarray
     """

@@ -135,8 +135,8 @@
 	% 2. Explicacion RC5
 	% -------------------------------------------------
 	
-	\section{Explicación RC5}
-	El RC5 es un algoritmo de cifrado simétrico diseñado por Ronald Rivest. Se caracteriza por su sencillez y flexibilidad, ya que permite configurar el tamaño de palabra, el número de rondas y la longitud de la clave usada.
+	\section{¿Qué es?}
+	RC5 es un algoritmo de cifrado de clave simétrica diseñado por Ronald Rivest. Se caracteriza por su sencillez y flexibilidad, ya que permite configurar el tamaño de palabra, el número de rondas y la longitud de la clave usada.
 	Este algoritmo se basa en 3 operaciones principales:
 	\begin{enumerate}
 		\item La suma modular
@@ -144,7 +144,7 @@
 		\item Las rotaciones de bits dependientes de los datos.
 	\end{enumerate}
 	De esta forma, la combinación de estas 3 operaciones permite transformar el mensaje original en un texto cifrado que no puede interpretarse directamente sin disponer de la clave correcta.
-	\subsubsection{Características principales: }
+	\subsection{Características principales}
 	\begin{itemize}
 		\item Se usa una clave secreta para realizar tanto el cifrado como el descifrado.
 		\item Sus parámetros permiten adaptar el algoritmo a diferentes necesidades. Se suelen expresar como RC5-w/r/b: 
@@ -156,11 +156,11 @@
 		\item Antes de cifrar, la clave se procesa para generar una tabla de subclaves que se utilizarán durante las distintas etapas de RC5.
 	\end{itemize}
 
-	\subsubsection{Proceso de cifrado y de descifrado: }
+	\subsubsection{Proceso de cifrado y de descifrado}
 	El cifrado comienza dividiendo el bloque de entrada en 2 palabras. A continuación, se aplican operaciones con las subclaves y una serie de rondas en las que se combinan sumas modulares, XOR y rotaciones de bits. Como resultado, queda un bloque cifrado de la misma longitud que el bloque original.
 	Para el descifrado, se realizan las operaciones inversas, empleando las subclaves en orden inverso, para recuperar las palabras originales y reconstruir el mensaje original.
 	
-	\subsection{Generación y expansión de claves: }
+	\subsection{Generación y expansión de claves}
 	En RC5 utilizamos un proceso de expansión de claves para transformar la clave secreta original en una tabla de subclaves. Estas subclaves se emplean a lo largo de las distintas etapas del cifrado y permiten que las operaciones dependan de la clave proporcionada.
 	El proceso consta de 3 fases:
 	\begin{itemize}
@@ -174,12 +174,26 @@
 	% 3. Implementación en Python
 	% -------------------------------------------------
 	
-	\section{Implementación en Python: }
+	\section{Implementación en Python}
+	\subsection{Estructura del programa} 
+	Hemos definido las diferentes funciones necesarias para el cifrado, dividendo la creación de la tabla S y la expansión de la clave en dos funciones distintas. Tras haber creado las funciones principales para poder llevar a cabo el cifrado y el descifrado hemos creado un menú en la aplicación que permita al usuario decidir qué hacer. A continuación, se especifican las funciones utilizadas en el programa. 
+	\subsection{Funciones principales} 
 	
-	\subsection{Estructura del programa: } 
-	
-	\subsection{Funciones principales: } 
-
+	\textbf{entero\_a\_bits}: Convierte un entero en un bitarray de longitud W\\
+	\textbf{bits\_a\_entero}: Convierte un bitarray en un entero\\
+	\textbf{rotar\_izquierda}: Rota un bitarray a la izquierda n posiciones\\
+	\textbf{rotar\_derecha}: Rota un bitarray a la derecha n posiciones\\
+	\textbf{sumar\_modular}: Realiza una suma modular de dos bitarrays\\
+	\textbf{inicializar\_S}: Inicializa la tabla de subclaves S\\
+	\textbf{preparar\_L}: Convertir la clave en palabras para crear L\\
+	\textbf{mezclar\_tablas}: Mezclar las tablas S y L\\
+	\textbf{expandir\_clave}: Expande la clave según las reglas de rc5\\
+	\textbf{cifrar\_bloque}: Cifra un bloque de 8 bytes usando las subclaves S\\
+	\textbf{cifrar\_mensaje}: Cifra un mensaje usando RC5 con la clave proporcionada\\
+	\textbf{descifrar\_mensaje}: Descifra un bloque de 8 bytes usando las subclaves S\\
+	\textbf{descifrar\_mensaje}: Descifra un mensaje cifrado usando RC5 con la clave proporcionada\\
+	\textbf{convertir\_clave}: Transforma la clave según el formato escogido\\
+	\textbf{main}: Función principal para ejecutar el cifrado y descifrado\\
 	
 	% -------------------------------------------------
 	% 4. Manual de usuario
@@ -187,15 +201,15 @@
 	
 	\section{Manual de usuario}
 	
-	\subsection{Requisitos y ejecución: }
+	\subsection{Requisitos y ejecución}
 	
-	\subsection{Ejemplo de uso: }
+	\subsection{Ejemplo de uso}
 	
 	
 	%-------------------------------------------------
 	% 5. Declaración de IA
 	%-------------------------------------------------
-	\section{Declaración de uso responsable de la IA:}
+	\section{Declaración de uso responsable de la IA}
 	
 	
 	% -------------------------------------------------
