@@ -157,7 +157,7 @@
 	\end{itemize}
 
 	\subsubsection{Proceso de cifrado y de descifrado}
-	El cifrado comienza dividiendo el bloque de entrada en 2 palabras. A continuación, se aplican operaciones con las subclaves y una serie de rondas en las que se combinan sumas modulares, XOR y rotaciones de bits. Como resultado, queda un bloque cifrado de la misma longitud que el bloque original.
+	El cifrado comienza dividiendo el bloque de entrada en 2 palabras. A continuación, se aplican operaciones con las subclaves y una serie de rondas en las que se combinan sumas modulares, XOR y rotaciones de bits. Como resultado, queda un bloque cifrado de la misma longitud que el bloque original. Este proceso se repite para los bloques restantes del mensaje, teniendo en cuenta el modo de operación seleccionado, ECB (cada bloque del mensaje se cifra por separado utilizando la misma clave) o CBC (que relaciona cada bloque con el cifrado del anterior, evitando así la repetición directa de patrones).\\
 	Para el descifrado, se realizan las operaciones inversas, empleando las subclaves en orden inverso, para recuperar las palabras originales y reconstruir el mensaje original.
 	
 	\subsection{Generación y expansión de claves}
@@ -177,7 +177,7 @@
 	% -------------------------------------------------
 	
 	\section{Manual de usuario}
-	El programa para cifrar con RC5 muestra una pantalla principal en la que el usuario puede elegir si cifrar, descifrar, la clave que quiere utilizar para llevar a cabo el cifrado/descifrado y, finalmente, si quiere cifrar usando ECB o CBC. \\
+	El programa para cifrar con RC5 muestra una pantalla principal en la que el usuario puede elegir si cifrar, descifrar, la clave que quiere utilizar para llevar a cabo el cifrado y el descifrado y, finalmente, si quiere cifrar usando ECB o CBC. \\
 	
 	Tanto el texto a cifrar como la clave que se usará para ejecutar el algoritmo se escriben en texto plano, devolviendo el texto cifrado en hexadecimal. \\
 	
@@ -191,13 +191,13 @@
 	\textbf{Cifrado con ECB}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.7\textwidth]{img1.png}
-		\figurename{\\ 1: Texto plano a cifrar con clave oculta}
+		\includegraphics[width=1\textwidth]{img1.png}
+		\caption{Texto plano a cifrar con clave oculta}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.7\textwidth]{img2.png}
-		\figurename{\\ 2: Texto plano a cifrar con clave visible}
+		\includegraphics[width=1\textwidth]{img2.png}
+		\caption{Texto plano a cifrar con clave visible}
 	\end{figure}
 	
 	En este primer ejemplo, se muestra como llevar a cabo el cifrado con ECB, para ello se siguen los siguientes pasos: 
@@ -212,13 +212,13 @@
 	\textbf{Descifrado con ECB}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.7\textwidth]{img3.png}
-		\figurename{\\ 3: Texto cifrado en hexadecimal a descifrar con clave oculta}
+		\includegraphics[width=1\textwidth]{img3.png}
+		\caption{Texto cifrado en hexadecimal a descifrar con clave oculta}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.7\textwidth]{img4.png}
-		\figurename{\\ 4: Texto cifrado en hexadecimal a descifrar con clave visible}
+		\includegraphics[width=1\textwidth]{img4.png}
+		\caption{Texto cifrado en hexadecimal a descifrar con clave visible}
 	\end{figure}
 	
 	En este segundo ejemplo, se muestra como llevar a cabo el descifrado con ECB, para ello se siguen los siguientes pasos: 
@@ -233,13 +233,13 @@
 	\textbf{Cifrado con CBC}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.7\textwidth]{img5.png}
-		\figurename{\\ 5:Texto plano a cifrar con clave oculta}
+		\includegraphics[width=1\textwidth]{img5.png}
+		\caption{Texto plano a cifrar con clave oculta}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.7\textwidth]{img6.png}
-		\figurename{\\ 6: Texto plano a cifrar con clave visible}
+		\includegraphics[width=1\textwidth]{img6.png}
+		\caption{Texto plano a cifrar con clave visible}
 	\end{figure}
 	
 	En este tercer ejemplo, se muestra como llevar a cabo el cifrado con CBC, para ello se siguen los siguientes pasos: 
@@ -254,13 +254,13 @@
 	\textbf{Descifrado con ECB}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.7\textwidth]{img7.png}
-		\figurename{\\ 7: Texto cifrado en hexadecimal a descifrar con clave oculta}
+		\includegraphics[width=1\textwidth]{img7.png}
+		\caption{Texto cifrado en hexadecimal a descifrar con clave oculta}
 	\end{figure}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[width=0.7\textwidth]{img8.png}
-		\figurename{\\ 8: Texto cifrado en hexadecimal a descifrar con clave visible}
+		\includegraphics[width=1\textwidth]{img8.png}
+		\caption{Texto cifrado en hexadecimal a descifrar con clave visible}
 	\end{figure}
 	
 	En este cuarto ejemplo, se muestra como llevar a cabo el descifrado con CBC, para ello se siguen los siguientes pasos: 
