@@ -128,7 +128,7 @@
 	% 1. Introducción
 	% -------------------------------------------------
 	
-	\section{Introducción: }
+	\section{Introducción}
 	El algoritmo de simétrico RC5 fue diseñado por Ronald Rivest en 1994, permitiendo cifrar y descifrar información mediante el uso de una clave secreta compartida entre los usuarios que lo empleen.
 	A continuación, explicaremos el funcionamiento, características y proceso de cifrado/descifrado de la implementación de este algoritmo en Python que hemos desarrollado.
 	% -------------------------------------------------
@@ -177,17 +177,100 @@
 	% -------------------------------------------------
 	
 	\section{Manual de usuario}
+	El programa para cifrar con RC5 muestra una pantalla principal en la que el usuario puede elegir si cifrar, descifrar, la clave que quiere utilizar para llevar a cabo el cifrado/descifrado y, finalmente, si quiere cifrar usando ECB o CBC. \\
 	
-	\subsection{Requisitos y ejecución}
+	Tanto el texto a cifrar como la clave que se usará para ejecutar el algoritmo se escriben en texto plano, devolviendo el texto cifrado en hexadecimal. \\
+	
+	Cuando el usuario quiere descifrar el texto, el texto a introducir se introduce en hexadecimal y la clave se introduce igual en texto plano. El programa devuelve el texto descifrado en texto plano.\\
+	
+	Además, para poder transmitir de manera sencilla la información, el programa ofrece la opción de copiar el texto.\\
+	
+	A continuación se detallan las distintas pruebas de ejecución del programa, indicando como usar cada una de sus funciones.\\
 	
 	\subsection{Ejemplo de uso}
+	\textbf{Cifrado con ECB}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{img1.png}
+		\figurename{\\ 1: Texto plano a cifrar con clave oculta}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{img2.png}
+		\figurename{\\ 2: Texto plano a cifrar con clave visible}
+	\end{figure}
 	
+	En este primer ejemplo, se muestra como llevar a cabo el cifrado con ECB, para ello se siguen los siguientes pasos: 
+	\begin{enumerate}
+		\item Se introduce el texto a cifrar en el apartado de \textit{Entrada}. Como en este caso vamos a cifrar el texto, en la entrada ponemos texto plano. 
+		\item Introducimos la clave que vamos a utilizar, manteniéndola oculta (imagen 1) o visible (imagen 2)
+		\item Seleccionamos el modo de cifrado que queremos utilizar, en este caso ECB. 
+		\item Pulsamos la opción de cifrar. 
+		\item En el campo \textit{Resultado} se muestra el texto cifrado, pudiendo copiarlo usando el botón \textit{Copiar resultado}
+	\end{enumerate}
 	
-	%-------------------------------------------------
-	% 4. Declaración de IA
-	%-------------------------------------------------
-	\section{Declaración de uso responsable de la IA}
+	\textbf{Descifrado con ECB}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{img3.png}
+		\figurename{\\ 3: Texto cifrado en hexadecimal a descifrar con clave oculta}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{img4.png}
+		\figurename{\\ 4: Texto cifrado en hexadecimal a descifrar con clave visible}
+	\end{figure}
 	
+	En este segundo ejemplo, se muestra como llevar a cabo el descifrado con ECB, para ello se siguen los siguientes pasos: 
+	\begin{enumerate}
+		\item Se introduce el texto a descifrar en el apartado de \textit{Entrada}. Como en este caso vamos a descifrar el texto, en la entrada ponemos texto en hexadecimal. 
+		\item Introducimos la clave que vamos a utilizar (debe ser la misma que la usada en el cifrado), manteniéndola oculta (imagen 3) o visible (imagen 4)
+		\item Seleccionamos el modo de cifrado que queremos utilizar, en este caso ECB. 
+		\item Pulsamos la opción de descifrar. 
+		\item En el campo \textit{Resultado} se muestra el texto descifrado (que como vemos coincide con el texto que hemos cifrado antes), pudiendo copiarlo usando el botón \textit{Copiar resultado}
+	\end{enumerate}
+	
+	\textbf{Cifrado con CBC}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{img5.png}
+		\figurename{\\ 5:Texto plano a cifrar con clave oculta}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{img6.png}
+		\figurename{\\ 6: Texto plano a cifrar con clave visible}
+	\end{figure}
+	
+	En este tercer ejemplo, se muestra como llevar a cabo el cifrado con CBC, para ello se siguen los siguientes pasos: 
+	\begin{enumerate}
+		\item Se introduce el texto a cifrar en el apartado de \textit{Entrada}. Como en este caso vamos a cifrar el texto, en la entrada ponemos texto plano. 
+		\item Introducimos la clave que vamos a utilizar, manteniéndola oculta (imagen 5) o visible (imagen 6)
+		\item Seleccionamos el modo de cifrado que queremos utilizar, en este caso CBC. 
+		\item Pulsamos la opción de cifrar. 
+		\item En el campo \textit{Resultado} se muestra el texto cifrado, pudiendo copiarlo usando el botón \textit{Copiar resultado}
+	\end{enumerate}
+	
+	\textbf{Descifrado con ECB}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{img7.png}
+		\figurename{\\ 7: Texto cifrado en hexadecimal a descifrar con clave oculta}
+	\end{figure}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.7\textwidth]{img8.png}
+		\figurename{\\ 8: Texto cifrado en hexadecimal a descifrar con clave visible}
+	\end{figure}
+	
+	En este cuarto ejemplo, se muestra como llevar a cabo el descifrado con CBC, para ello se siguen los siguientes pasos: 
+	\begin{enumerate}
+		\item Se introduce el texto a descifrar en el apartado de \textit{Entrada}. Como en este caso vamos a descifrar el texto, en la entrada ponemos texto en hexadecimal. 
+		\item Introducimos la clave que vamos a utilizar (debe ser la misma que la usada en el cifrado), manteniéndola oculta (imagen 7) o visible (imagen 8)
+		\item Seleccionamos el modo de cifrado que queremos utilizar, en este caso CBC. 
+		\item Pulsamos la opción de descifrar. 
+		\item En el campo \textit{Resultado} se muestra el texto descifrado (que como vemos coincide con el texto que hemos cifrado antes), pudiendo copiarlo usando el botón \textit{Copiar resultado}
+	\end{enumerate}
 	
 	% -------------------------------------------------
 	% FIN DEL DOCUMENTO
