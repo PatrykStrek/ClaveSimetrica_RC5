@@ -170,33 +170,10 @@
 	\end{itemize}
 	Una vez completado este proceso, la tabla S contiene las subclaves necesarias para realizar el cifrado y descifrado. 
 	
-	% -------------------------------------------------
-	% 3. Implementación en Python
-	% -------------------------------------------------
-	
-	\section{Implementación en Python}
-	\subsection{Estructura del programa} 
-	Hemos definido las diferentes funciones necesarias para el cifrado, dividendo la creación de la tabla S y la expansión de la clave en dos funciones distintas. Tras haber creado las funciones principales para poder llevar a cabo el cifrado y el descifrado hemos creado un menú en la aplicación que permita al usuario decidir qué hacer. A continuación, se especifican las funciones utilizadas en el programa. 
-	\subsection{Funciones principales} 
-	
-	\textbf{entero\_a\_bits}: Convierte un entero en un bitarray de longitud W\\
-	\textbf{bits\_a\_entero}: Convierte un bitarray en un entero\\
-	\textbf{rotar\_izquierda}: Rota un bitarray a la izquierda n posiciones\\
-	\textbf{rotar\_derecha}: Rota un bitarray a la derecha n posiciones\\
-	\textbf{sumar\_modular}: Realiza una suma modular de dos bitarrays\\
-	\textbf{inicializar\_S}: Inicializa la tabla de subclaves S\\
-	\textbf{preparar\_L}: Convertir la clave en palabras para crear L\\
-	\textbf{mezclar\_tablas}: Mezclar las tablas S y L\\
-	\textbf{expandir\_clave}: Expande la clave según las reglas de rc5\\
-	\textbf{cifrar\_bloque}: Cifra un bloque de 8 bytes usando las subclaves S\\
-	\textbf{cifrar\_mensaje}: Cifra un mensaje usando RC5 con la clave proporcionada\\
-	\textbf{descifrar\_mensaje}: Descifra un bloque de 8 bytes usando las subclaves S\\
-	\textbf{descifrar\_mensaje}: Descifra un mensaje cifrado usando RC5 con la clave proporcionada\\
-	\textbf{convertir\_clave}: Transforma la clave según el formato escogido\\
-	\textbf{main}: Función principal para ejecutar el cifrado y descifrado\\
+
 	
 	% -------------------------------------------------
-	% 4. Manual de usuario
+	% 3. Manual de usuario
 	% -------------------------------------------------
 	
 	\section{Manual de usuario}
@@ -207,7 +184,7 @@
 	
 	
 	%-------------------------------------------------
-	% 5. Declaración de IA
+	% 4. Declaración de IA
 	%-------------------------------------------------
 	\section{Declaración de uso responsable de la IA}
 	
